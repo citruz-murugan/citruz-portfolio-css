@@ -94,7 +94,7 @@ Settings > General > Body Class.
    
       .cz {
         /* Brand Colors */
-        --cz-primary:    #222022;  /* Deep base */
+        --cz-primary:    green;  /* Deep base */
         --cz-secondary:  #eb5939;  /* Vibrant orange-red */
         --cz-tertiary:   #ffffff;  /* Pure white */
         --cz-tetra:      #898989;  /* Neutral gray */
