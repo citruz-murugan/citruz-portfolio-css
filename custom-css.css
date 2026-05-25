@@ -1,0 +1,476 @@
+/******************************************************************************
+ALL GLOBAL CSS OUTSIDE .CZ THEME THAT WILL WORK ACROSS CITRUZ DESIGN PORTFOLIO 
+*******************************************************************************/
+
+/* ============================================
+   SECTION 2 — GLOBAL BASE
+   Sets antialiasing, default font, and base
+   colour. No font-size here — that lives on
+   .cz containers only, keeping Semplice's own
+   px values completely unaffected.
+   ============================================ */
+
+    /* The fallback here handles the
+      edge case where no theme class is applied. */
+      
+   
+   html,
+   body {
+     -webkit-font-smoothing: antialiased !important;
+     -moz-osx-font-smoothing: grayscale !important;
+     font-family: 'Fort-Book', sans-serif;
+     font-weight: 400;
+     line-height: 110%;
+     background: #222022;
+     color: #ffffff;
+   }
+   
+   /******************************************************************************
+   ALL GLOBAL CSS INSIDE .CZ THEME THAT WILL WORK ACROSS CITRUZ DESIGN PORTFOLIO 
+   *******************************************************************************/
+   
+/* ============================================
+      SECTION 3 — .cz FLUID BASE FONT-SIZE
+      The fluid rem scale lives here, not on
+      html/body. This means Semplice's own px
+      font sizes are completely untouched. Only
+      elements inside a .cz container (or with
+      .cz themselves) get this rem scaling.
+      ============================================ */
+   
+   .cz {
+     font-size: calc(7.92453px + 1.88679vw); /* mobile */
+   }
+   
+   @media (min-width: 768px) {
+     .cz { font-size: calc(8px + 0.78125vw); } /* tablet */
+   }
+   
+   @media (min-width: 1200px) {
+     .cz { font-size: 0.9259259259vw; } /* desktop */
+   }
+   
+   /* ============================================
+    SECTION 4 — COLOUR THEME SYSTEM
+    ── HOW TOKENS ARE NAMED ──────────────────
+    --color-bg-* page and surface backgrounds
+    --color-text-* text at various opacities
+    --color-accent-* primary and secondary accents
+    --color-border-* border colours at rest and hover
+    --color-ambient-* ambient gradient colours
+    --color-trunk-* Vanta trunk JS colour tokens
+                        (read by JS via getComputedStyle)
+    --color-header-bg  header background
+    
+    ── HOW TO ADD A NEW THEME ────────────────
+    1. Copy the entire .theme-cz block below
+    2. Rename it (e.g. .blue-orange-theme)
+    3. Change the colour values inside it
+    4. Apply the new class to <html> or <body>
+        (replace theme-cz with your new name)
+    5. All .cz rules update automatically
+    
+    ── HOW TRUNK COLOURS WORK ────────────────
+    The JS reads --color-trunk-primary and
+    --color-trunk-secondary via getComputedStyle
+    and converts them to hex integers. Change
+    these variables in any theme and the trunk
+    colour will update without touching the JS.
+    ============================================ */
+    
+/* ============================================
+SECTION 5 — .cz — CITRUZ PALETTE
+premioum dark brown /white theme. This is the default.
+Apply via: document.documentElement
+    .classList.add('theme-mp')
+Or add "cz" to body class in Semplice
+Settings > General > Body Class.
+============================================ */
+
+   
+   /* ============================================
+      SECTION 4 — COLOUR THEME SYSTEM (.cz)
+      ============================================ */
+   
+      .cz {
+        /* Brand Colors */
+        --cz-primary:    #222022;  /* Deep base */
+        --cz-secondary:  #eb5939;  /* Vibrant orange-red */
+        --cz-tertiary:   #ffffff;  /* Pure white */
+        --cz-tetra:      #898989;  /* Neutral gray */
+        --cz-penta:      #e3e3e3;  /* Light gray */
+        --cz-hexa:       #f6f8fc;  /* Off-white */
+     /* right now not being used however can be used in future */
+        --color-trunk-primary:   #ffda93;
+        --color-trunk-secondary: #ffffff;
+        --color-trunk-bg:        #171719;
+        --color-trunk-glow-a:    rgba(255, 218, 147, 0.2);
+        --color-trunk-glow-b:    rgba(23, 23, 25, 0.5);
+        --color-trunk-fade:      #171719;
+        --color-heading-mask-border: rgba(255, 255, 255, 0.12);
+   }
+   
+   .cz, .cz body {
+     background: var(--cz-primary) !important;
+     color: var(--cz-tertiary);
+   }
+   
+   /* ============================================
+      THEME UTILITIES — SEMANTIC UTILITY CLASSES
+      ============================================ */
+    /* Backgrounds */
+   .cz .bg-primary      { background-color: var(--cz-primary) !important; }
+   .cz .bg-secondary    { background-color: var(--cz-secondary) !important; }
+   .cz .bg-tertiary     { background-color: var(--cz-tertiary) !important; }
+   .cz .bg-tetra        { background-color: var(--cz-tetra) !important; }
+   .cz .bg-penta        { background-color: var(--cz-penta) !important; }
+   .cz .bg-hexa         { background-color: var(--cz-hexa) !important; }
+   
+   /* Semantic Text Colors */
+   .cz .text-primary    { color: var(--cz-primary) !important; }
+   .cz .text-secondary  { color: var(--cz-secondary) !important; }
+   .cz .text-tertiary   { color: var(--cz-tertiary) !important; }
+   .cz .text-tetra      { color: var(--cz-tetra) !important; }
+   .cz .text-penta      { color: var(--cz-penta) !important; }
+   .cz .text-hexa       { color: var(--cz-hexa) !important; }
+   
+    /* Borders */
+   .cz .border-primary    { border-color: var(--cz-primary) !important; }
+   .cz .border-secondary  { border-color: var(--cz-secondary) !important; }
+   .cz .border-tertiary   { border-color: var(--cz-tertiary) !important; }
+   .cz .border-tetra      { border-color: var(--cz-tetra) !important; }
+   .cz .border-penta      { border-color: var(--cz-penta) !important; }
+   .cz .border-hexa       { border-color: var(--cz-hexa) !important; }
+   
+   /* ============================================
+      SECTION 12 — .cz MODIFIER TYPE SCALE SYSTEM
+      ============================================ */
+   
+   /* ── H1 ── */
+   h1.cz, .cz h1 {
+     font-family: 'Fort-Medium', sans-serif !important;
+     font-weight: 500 !important;
+     font-size: 7rem !important;
+     line-height: 84% !important;
+     letter-spacing: -0.05em !important;
+     text-transform: capitalize !important;
+     color: var(--cz-tertiary) !important;
+   }
+   
+   @media (min-width: 768px) {
+     .cz .hero h1, .hero h1.cz { font-size: 9.5rem !important; }
+   }
+   @media (min-width: 1200px) {
+     .cz .hero h1, .hero h1.cz { font-size: 11.5rem !important; }
+   }
+   
+   /* ── H2 ── */
+   h2.cz, .cz h2 {
+     font-family: "Fort-Light", sans-serif !important;
+     font-weight: 300 !important;
+     font-size: 2.8rem !important;
+     line-height: 110% !important;
+     letter-spacing: -0.05em !important;
+     margin-bottom: 2.5rem !important;
+     color: var(--cz-tertiary) !important;
+   }
+   @media (min-width: 768px) { .cz h2, h2.cz { font-size: 4.5rem !important; } }
+   @media (min-width: 1200px) { .cz h2, h2.cz { font-size: 5.2rem !important; } }
+   
+   /* ── H3 ── */
+   h3.cz, .cz h3 {
+     font-family: "Fort-Light", sans-serif !important;
+     font-weight: 300 !important;
+     font-size: 1.8rem !important;
+     line-height: 120% !important;
+     letter-spacing: -1px !important;
+     margin-bottom: 1.8rem !important;
+     color: var(--cz-secondary) !important;
+   }
+   @media (min-width: 768px) { .cz h3, h3.cz { font-size: 2.4rem !important; } }
+   @media (min-width: 1200px) { .cz h3, h3.cz { font-size: 3.2rem !important; } }
+   
+   /* ── H4 ── */
+   h4.cz, .cz h4 {
+     font-family: "Fort-Thin", sans-serif !important;
+     font-weight: 100 !important;
+     font-size: 1rem !important;
+     line-height: 100% !important;
+     letter-spacing: 0.12em !important;
+     text-transform: uppercase !important;
+     margin-bottom: 1.2rem !important;
+     color: var(--cz-secondary) !important;
+   }
+   
+   /* ── H5 ── */
+   h5.cz, .cz h5 {
+     font-family: "Fort-Medium", sans-serif !important;
+     font-weight: 500 !important;
+     font-size: 1rem !important;
+     line-height: 1 !important;
+     letter-spacing: 0.15em !important;
+     text-transform: uppercase !important;
+     color: var(--cz-tertiary) !important;
+     margin-bottom: 0.8rem !important;
+   }
+   
+   /* ── H6 ── */
+   h6.cz, .cz h6 {
+     font-family: "Fort-Medium", sans-serif !important;
+     font-weight: 500 !important;
+     font-size: 1rem !important;
+     line-height: 1.2 !important;
+     letter-spacing: 0.1em !important;
+     text-transform: uppercase !important;
+     color: var(--cz-tetra) !important;
+   }
+   
+   /* ── PARAGRAPH ── */
+   p.cz, .cz p {
+     font-family: "Fort-Book", sans-serif !important;
+     font-size: 0.875rem !important;
+     font-weight: 400 !important;
+     line-height: 180% !important;
+     letter-spacing: 0.01em !important;
+     margin-bottom: 1.2em !important;
+     color: var(--cz-penta) !important;
+   }
+   @media (min-width: 1200px) { p.cz, .cz p { font-size: 1rem !important; } }
+   
+   /* ── LINKS & EMPHASIS ── */
+   a.cz, .cz a {
+     font-family: "Fort-Medium", sans-serif !important;
+     color: var(--cz-tertiary) !important;
+     text-decoration: none !important;
+   }
+   a.cz:hover, .cz a:hover { color: var(--cz-secondary) !important; }
+   
+   .cz strong, strong.cz {
+     color: var(--cz-secondary) !important;
+     font-family: "Fort-Bold", sans-serif !important;
+   }
+
+   p .single-line,
+      .single-line p {
+        font-size: 0.875rem !important;
+        font-weight: 400 !important;
+        line-height: 180% !important;     
+        letter-spacing: 0.02em !important;
+        /*margin-bottom: 1.2em !important;*/
+        color: var(--color-text, #ffffff) !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+
+      @media (min-width: 1200px) {
+        p.cz.single-line, .cz .single-line p {
+          font-size: 1rem !important;
+        }
+      }
+
+ 
+/* ============================================
+   SECTION 13 — LANDING PAGE SPECIFIC CLASSES
+   ============================================ */
+
+/* ── .single-line — Prevent layout breaks ──── */
+p.single-line,
+.single-line p {
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  line-height: 180% !important;     
+  letter-spacing: 0.02em !important;
+  color: var(--cz-tertiary, #ffffff) !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+@media (min-width: 1200px) {
+  p.single-line, .single-line p {
+    font-size: 1rem !important;
+  }
+}
+
+/* ── .testimonial — Landing page review block ──── */
+p.testimonial,
+.testimonial p {
+  font-family: "Fort-Book", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 1.3rem !important;
+  line-height: 160% !important;
+  letter-spacing: 0.02em !important;
+  margin-bottom: 1.5rem !important;
+  color: var(--cz-tetra, #898989) !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+@media (min-width: 1200px) {
+  p.testimonial, .testimonial p {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* ── .sub-title — Section Eyebrow (Primary) ──── */
+.sub-title .cz, .sub-title,
+.sub-title *,
+.sub-title p,
+.sub-title span {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--cz-secondary, #EB5939) !important;
+  margin-bottom: 1px !important;
+}
+
+/* ── .sub-title2 — Section Eyebrow (Bold/High Contrast) ──── */
+.sub-title2 .cz, .sub-title2,
+.sub-title2 *,
+.sub-title2 p,
+.sub-title2 span {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.45em !important;
+  text-transform: uppercase !important;
+  color: var(--cz-secondary, #EB5939) !important;
+  margin-bottom: 1px !important;
+}
+
+
+/* ============================================
+   SECTION 13 — SPECIAL COMPONENTS SPECIFIC CLASSES
+   ============================================ */
+
+/* ============================================
+    VANTA TRUNK HERO SECTION
+      ============================================ */
+   
+      #section_yezc8c0i2 {
+        background: transparent !important;
+        background-color: transparent !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+        position: relative !important;
+      }
+      
+      #section_yezc8c0i2,
+      #section_yezc8c0i2 > *,
+      .semplice-components,
+      .content-block,
+      .sections {
+        overflow: visible !important;
+      }
+      
+      /* Canvas base — JS owns top/left/transform/opacity */
+      #section_yezc8c0i2 canvas {
+          position: absolute !important;
+          top: 28% !important;
+          left: 50% !important;
+          z-index: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+      
+      @media (max-width: 768px) {
+        #section_yezc8c0i2 canvas {
+          top: 30% !important;
+        }
+      }
+
+      /* ── VISIBILITY ── */
+   .hide-this      { display: none !important; }
+   
+   .hide-mobile    { display: block !important; }
+   @media (max-width: 767px) { .hide-mobile { display: none !important; } }
+   
+   .hide-tablet    { display: block !important; }
+   @media (min-width: 768px) and (max-width: 1199px) { .hide-tablet { display: none !important; } }
+   
+   .hide-desktop   { display: none !important; }
+   @media (min-width: 1200px) { .hide-desktop { display: block !important; } }
+   
+   /* ── OPACITY ── */
+   .opacity-0   { opacity: 0 !important; }
+   .opacity-25  { opacity: 0.25 !important; }
+   .opacity-50  { opacity: 0.5 !important; }
+   .opacity-75  { opacity: 0.75 !important; }
+   .opacity-100 { opacity: 1 !important; }
+   
+   /* ── MARGIN (8PT GRID: 0.5rem = 8px) ── */
+    /* ── MARGIN TOP ── */
+   .mt-0  { margin-top: 0 !important; }
+   .mt-xs { margin-top: 0.5rem !important; }
+   .mt-sm { margin-top: 1rem !important; }
+   .mt-md { margin-top: 2rem !important; }
+   .mt-lg { margin-top: 4rem !important; }
+   .mt-xl { margin-top: 8rem !important; }
+   
+    /* ── MARGIN BOTTOM ── */
+   .mb-0  { margin-bottom: 0 !important; }
+   .mb-xs { margin-bottom: 0.5rem !important; }
+   .mb-sm { margin-bottom: 1rem !important; }
+   .mb-md { margin-bottom: 2rem !important; }
+   .mb-lg { margin-bottom: 4rem !important; }
+   .mb-xl { margin-bottom: 8rem !important; }
+   
+   /* ── PADDING (8PT GRID) ── */
+    /* ── PADDING TOP ── */
+   .pt-0  { padding-top: 0 !important; }
+   .pt-xs { padding-top: 0.5rem !important; }
+   .pt-sm { padding-top: 1rem !important; }
+   .pt-md { padding-top: 2rem !important; }
+   .pt-lg { padding-top: 4rem !important; }
+   .pt-xl { padding-top: 8rem !important; }
+   
+    /* ── PADDING BOTTOM ── */
+   .pb-0  { padding-bottom: 0 !important; }
+   .pb-xs { padding-bottom: 0.5rem !important; }
+   .pb-sm { padding-bottom: 1rem !important; }
+   .pb-md { padding-bottom: 2rem !important; }
+   .pb-lg { padding-bottom: 4rem !important; }
+   .pb-xl { padding-bottom: 8rem !important; }
+   
+   /* ── TEXT ALIGNMENT ── */
+   .text-left   { text-align: left !important; }
+   .text-center { text-align: center !important; }
+   .text-right  { text-align: right !important; }
+   
+  /* ── TEXT COLOUR — uses theme variables ── */
+   .text-accent  { color: var(--color-accent,   #e91e8c) !important; }
+   .text-accent-2{ color: var(--color-accent-2, #bf2fff) !important; }
+   .text-white   { color: var(--color-text,     #f0d8ff) !important; }
+   .text-muted   { color: var(--color-text-muted, rgba(240,216,255,0.5)) !important; }
+   
+     /* ── BORDER — uses theme variables ── */
+   .border-top-accent    { border-top:    1px solid var(--color-border-hover, rgba(233,30,140,0.35)) !important; }
+   .border-bottom-accent { border-bottom: 1px solid var(--color-border-hover, rgba(233,30,140,0.35)) !important; }
+   
+    /* ── BACKGROUND ── */
+    .bg-transparent { background: transparent !important; }
+    .bg-dark        { background: var(--color-bg-alt, #130820) !important; }
+   
+   /* ── LAYOUT / TYPOGRAPHY HELPERS ── */
+   .text-uppercase { text-transform: uppercase !important; }
+   .font-bold      { font-weight: 700 !important; }
+   .none-break     { white-space: nowrap !important; }
+   .flex-center    { display: flex !important; justify-content: center !important; align-items: center !important; }
+   
+   /* ── POINTER / OVERFLOW / Z-INDEX ── */
+   .no-pointer       { pointer-events: none !important; }
+   .overflow-hidden  { overflow: hidden !important; }
+   .overflow-visible { overflow: visible !important; }
+   
+   .z-0   { z-index: 0 !important; }
+   .z-1   { z-index: 1 !important; }
+   .z-10  { z-index: 10 !important; }
+   .z-50  { z-index: 50 !important; }
+   .z-100 { z-index: 100 !important; }
+   
+     /* ── STICKY SECTION AS BACKGROUND ── */
+   .fixed-section {
+     position: fixed !important;
+     left: 0 !important;
+     top: 0 !important;
+     pointer-events: none !important;
+   }
