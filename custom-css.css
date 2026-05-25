@@ -183,13 +183,14 @@ Settings > General > Body Class.
    h2.cz *,
    .cz h2,
    .cz h2 * {
-     font-family: "Fort-Light", sans-serif !important;
-     font-weight: 300 !important;
+     font-family: "Fort-Extralight", sans-serif !important;
+     font-weight: normal !important;
      font-size: 2.8rem !important;
-     line-height: 110% !important;
-     letter-spacing: -0.05em !important;
+     line-height: 153% !important;
+     letter-spacing: -0.01em !important;
+     text-transform: none !important;
      margin-bottom: 2.5rem !important;
-     color: #EB5939 !important;
+     color: var(--cz-tertiary) !important;
    }
    @media (min-width: 768px) {
      h2.cz, h2.cz *, .cz h2, .cz h2 * { font-size: 4.5rem !important; }
@@ -204,18 +205,19 @@ Settings > General > Body Class.
    .cz h3,
    .cz h3 * {
      font-family: "Fort-Light", sans-serif !important;
-     font-weight: 300 !important;
-     font-size: 1.8rem !important;
-     line-height: 120% !important;
-     letter-spacing: -1px !important;
-     margin-bottom: 1.8rem !important;
-     color: var(--cz-secondary) !important;
+     font-weight: normal !important;
+     font-size: 2rem !important;
+     line-height: 88% !important;
+     letter-spacing: 0 !important;
+     text-transform: none !important;
+     margin-bottom: 2.5rem !important;
+     color: var(--cz-tertiary) !important;
    }
    @media (min-width: 768px) {
-     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 2.4rem !important; }
+     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 2.6rem !important; }
    }
    @media (min-width: 1200px) {
-     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 3.2rem !important; }
+     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 3.125rem !important; }
    }
 
    /* ── H4 ── */
@@ -279,6 +281,58 @@ Settings > General > Body Class.
      p.cz, p.cz *, .cz p, .cz p * { font-size: 1rem !important; }
    }
 
+   /* ── PARAGRAPH LARGE — project description style (RESN .project__description) ── */
+   p.large.cz,
+   p.large.cz *,
+   .large.cz p,
+   .large.cz p * {
+     font-family: "Fort-Extralight", sans-serif !important;
+     font-weight: normal !important;
+     font-size: 1.6rem !important;
+     line-height: 135% !important;
+     letter-spacing: 0.01em !important;
+     color: var(--cz-tertiary) !important;
+   }
+   @media (min-width: 768px) {
+     p.large.cz, p.large.cz *, .large.cz p, .large.cz p * { font-size: 1.9rem !important; }
+   }
+   @media (min-width: 1200px) {
+     p.large.cz, p.large.cz *, .large.cz p, .large.cz p * { font-size: 2.125rem !important; }
+   }
+
+   /* ── PARAGRAPH NORMAL — project body text style (RESN .text__body) ── */
+   p.normal.cz,
+   p.normal.cz *,
+   .normal.cz p,
+   .normal.cz p * {
+     font-family: "Fort-Light", sans-serif !important;
+     font-weight: normal !important;
+     font-size: 1.1rem !important;
+     line-height: 173% !important;
+     letter-spacing: 0.01em !important;
+     color: var(--cz-penta) !important;
+   }
+   @media (min-width: 768px) {
+     p.normal.cz, p.normal.cz *, .normal.cz p, .normal.cz p * { font-size: 1.25rem !important; }
+   }
+   @media (min-width: 1200px) {
+     p.normal.cz, p.normal.cz *, .normal.cz p, .normal.cz p * { font-size: 1.375rem !important; }
+   }
+
+   /* ── PARAGRAPH SMALL — metadata value text (RESN .project__information p) ── */
+   p.small.cz,
+   p.small.cz *,
+   .small.cz p,
+   .small.cz p * {
+     font-family: "Fort-Book", sans-serif !important;
+     font-weight: normal !important;
+     font-size: 13px !important;
+     line-height: 154% !important;
+     letter-spacing: normal !important;
+     color: var(--cz-tetra) !important;
+     margin: 0 !important;
+   }
+
    /* ── LINKS & EMPHASIS ── */
    a.cz,
    a.cz *,
@@ -336,16 +390,14 @@ Settings > General > Body Class.
    /* ── .sub-title — H2 Eyebrow Modifier (Primary) ──── */
    h2.sub-title.cz,
    h2.sub-title.cz *,
-   .cz h2.sub-title,
-   .cz h2.sub-title *,
    .sub-title.cz h2,
    .sub-title.cz h2 * {
-     font-family: "Fort-Thin", sans-serif !important;
-     font-size: 11px !important;
-     font-weight: 100 !important;
+     font-family: "Fort-Book", sans-serif !important;
+     font-size: 12px !important;
+     font-weight: 400 !important;
      letter-spacing: 0.22em !important;
      text-transform: uppercase !important;
-     color: #EB5939 !important;
+     color: var(--cz-secondary, #EB5939) !important;
      margin-bottom: 1px !important;
      line-height: 2 !important;
    }
@@ -353,18 +405,45 @@ Settings > General > Body Class.
    /* ── .sub-title2 — H2 Eyebrow Modifier (Bold/High Contrast) ──── */
    h2.sub-title2.cz,
    h2.sub-title2.cz *,
-   .cz h2.sub-title2,
-   .cz h2.sub-title2 *,
    .sub-title2.cz h2,
    .sub-title2.cz h2 * {
-     font-family: "Fort-Thin", sans-serif !important;
-     font-size: 11px !important;
-     font-weight: 100 !important;
+     font-family: "Fort-Book", sans-serif !important;
+     font-size: 12px !important;
+     font-weight: 400 !important;
      letter-spacing: 0.22em !important;
      text-transform: uppercase !important;
      color: var(--cz-secondary, #EB5939) !important;
      margin-bottom: 1px !important;
      line-height: 2 !important;
+   }
+
+   /* ── .subtitle-bold — H2 Section Label (RESN .text__title h3) ──── */
+   h2.subtitle-bold.cz,
+   h2.subtitle-bold.cz *,
+   .subtitle-bold.cz h2,
+   .subtitle-bold.cz h2 * {
+     font-family: "Fort-Medium", sans-serif !important;
+     font-size: 13px !important;
+     font-weight: 700 !important;
+     letter-spacing: 0.04em !important;
+     line-height: 170% !important;
+     text-transform: uppercase !important;
+     color: var(--cz-tertiary) !important;
+     margin-bottom: 1px !important;
+   }
+
+   /* ── .subtitle — H4 Metadata Label (RESN .project__information h4) ──── */
+   h4.subtitle.cz,
+   h4.subtitle.cz *,
+   .subtitle.cz h4,
+   .subtitle.cz h4 * {
+     font-family: "Fort-Medium", sans-serif !important;
+     font-size: 11px !important;
+     font-weight: normal !important;
+     letter-spacing: 0.04em !important;
+     line-height: 182% !important;
+     color: var(--cz-tertiary) !important;
+     margin-bottom: 10px !important;
    }
 
    /* ── .single-line — Prevent layout breaks ──── */
