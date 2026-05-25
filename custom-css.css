@@ -181,7 +181,7 @@ Settings > General > Body Class.
      line-height: 110% !important;
      letter-spacing: -0.05em !important;
      margin-bottom: 2.5rem !important;
-     color: #EB5939 !important;
+     color: purple !important; /* TEST — revert to #EB5939 */
    }
    @media (min-width: 768px) {
      h2.cz, h2.cz *, .cz h2, .cz h2 * { font-size: 4.5rem !important; }
@@ -310,7 +310,7 @@ Settings > General > Body Class.
      line-height: 84% !important;
      letter-spacing: 0 !important;
      text-transform: none !important;
-     color: purple !important; /* TEST — revert to var(--cz-tertiary, #ffffff) */
+     color: darkgreen !important; /* TEST — revert to var(--cz-tertiary, #ffffff) */
    }
    @media (min-width: 768px) {
      h1.hero.landing-page.cz,
