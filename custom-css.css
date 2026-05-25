@@ -110,7 +110,7 @@ Settings > General > Body Class.
         --color-heading-mask-border: rgba(255, 255, 255, 0.12);
    }
    
-   .cz, .cz body {
+   body.cz, html.cz body {
      background: var(--cz-primary) !important;
      color: var(--cz-tertiary);
    }
