@@ -311,6 +311,31 @@ p.testimonial,
   }
 }
 
+/* ── .landing-page — Hero H1 override ──── */
+.hero h1.landing-page,
+.hero .landing-page h1,
+h1.landing-page {
+  font-family: 'Fort-Bold', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 8rem !important;
+  line-height: 88% !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: var(--cz-tertiary, #ffffff) !important;
+}
+
+@media (min-width: 768px) {
+  .hero h1.landing-page,
+  .hero .landing-page h1,
+  h1.landing-page { font-size: 10rem !important; }
+}
+
+@media (min-width: 1200px) {
+  .hero h1.landing-page,
+  .hero .landing-page h1,
+  h1.landing-page { font-size: 12rem !important; }
+}
+
 /* ── .sub-title — Section Eyebrow (Primary) ──── */
 .sub-title .cz, .sub-title,
 .sub-title *,
