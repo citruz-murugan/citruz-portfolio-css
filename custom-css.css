@@ -95,8 +95,8 @@ Settings > General > Body Class.
       .cz {
         /* Brand Colors */
         --cz-primary:    #222022;  /* Deep base */
-        --cz-secondary:  green;  /* Vibrant orange-red */
-        --cz-tertiary:   green;  /* Pure white */
+        --cz-secondary:  #eb5939;  /* Vibrant orange-red */
+        --cz-tertiary:   #ffffff;  /* Pure white */
         --cz-tetra:      #898989;  /* Neutral gray */
         --cz-penta:      #e3e3e3;  /* Light gray */
         --cz-hexa:       #f6f8fc;  /* Off-white */
@@ -144,10 +144,17 @@ Settings > General > Body Class.
    
    /* ============================================
       SECTION 12 — .cz MODIFIER TYPE SCALE SYSTEM
+      Each rule uses 4 selectors so styles apply
+      whether .cz is on the element itself OR on
+      a parent container (Semplice's pattern), and
+      the * form overrides Semplice's inner spans.
       ============================================ */
-   
+
    /* ── H1 ── */
-   h1.cz, .cz h1 {
+   h1.cz,
+   h1.cz *,
+   .cz h1,
+   .cz h1 * {
      font-family: 'Fort-Medium', sans-serif !important;
      font-weight: 500 !important;
      font-size: 7rem !important;
@@ -156,29 +163,38 @@ Settings > General > Body Class.
      text-transform: capitalize !important;
      color: var(--cz-tertiary) !important;
    }
-   
    @media (min-width: 768px) {
-     .cz .hero h1, .hero h1.cz { font-size: 9.5rem !important; }
+     h1.cz, h1.cz *, .cz h1, .cz h1 * { font-size: 9.5rem !important; }
    }
    @media (min-width: 1200px) {
-     .cz .hero h1, .hero h1.cz { font-size: 11.5rem !important; }
+     h1.cz, h1.cz *, .cz h1, .cz h1 * { font-size: 11.5rem !important; }
    }
-   
+
    /* ── H2 ── */
-   h2.cz, .cz h2 {
+   h2.cz,
+   h2.cz *,
+   .cz h2,
+   .cz h2 * {
      font-family: "Fort-Light", sans-serif !important;
      font-weight: 300 !important;
      font-size: 2.8rem !important;
      line-height: 110% !important;
      letter-spacing: -0.05em !important;
      margin-bottom: 2.5rem !important;
-     color: var(--cz-tertiary) !important;
+     color: #EB5939 !important;
    }
-   @media (min-width: 768px) { .cz h2, h2.cz { font-size: 4.5rem !important; } }
-   @media (min-width: 1200px) { .cz h2, h2.cz { font-size: 5.2rem !important; } }
-   
+   @media (min-width: 768px) {
+     h2.cz, h2.cz *, .cz h2, .cz h2 * { font-size: 4.5rem !important; }
+   }
+   @media (min-width: 1200px) {
+     h2.cz, h2.cz *, .cz h2, .cz h2 * { font-size: 5.2rem !important; }
+   }
+
    /* ── H3 ── */
-   h3.cz, .cz h3 {
+   h3.cz,
+   h3.cz *,
+   .cz h3,
+   .cz h3 * {
      font-family: "Fort-Light", sans-serif !important;
      font-weight: 300 !important;
      font-size: 1.8rem !important;
@@ -187,11 +203,18 @@ Settings > General > Body Class.
      margin-bottom: 1.8rem !important;
      color: var(--cz-secondary) !important;
    }
-   @media (min-width: 768px) { .cz h3, h3.cz { font-size: 2.4rem !important; } }
-   @media (min-width: 1200px) { .cz h3, h3.cz { font-size: 3.2rem !important; } }
-   
+   @media (min-width: 768px) {
+     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 2.4rem !important; }
+   }
+   @media (min-width: 1200px) {
+     h3.cz, h3.cz *, .cz h3, .cz h3 * { font-size: 3.2rem !important; }
+   }
+
    /* ── H4 ── */
-   h4.cz, .cz h4 {
+   h4.cz,
+   h4.cz *,
+   .cz h4,
+   .cz h4 * {
      font-family: "Fort-Thin", sans-serif !important;
      font-weight: 100 !important;
      font-size: 1rem !important;
@@ -201,9 +224,12 @@ Settings > General > Body Class.
      margin-bottom: 1.2rem !important;
      color: var(--cz-secondary) !important;
    }
-   
+
    /* ── H5 ── */
-   h5.cz, .cz h5 {
+   h5.cz,
+   h5.cz *,
+   .cz h5,
+   .cz h5 * {
      font-family: "Fort-Medium", sans-serif !important;
      font-weight: 500 !important;
      font-size: 1rem !important;
@@ -213,9 +239,12 @@ Settings > General > Body Class.
      color: var(--cz-tertiary) !important;
      margin-bottom: 0.8rem !important;
    }
-   
+
    /* ── H6 ── */
-   h6.cz, .cz h6 {
+   h6.cz,
+   h6.cz *,
+   .cz h6,
+   .cz h6 * {
      font-family: "Fort-Medium", sans-serif !important;
      font-weight: 500 !important;
      font-size: 1rem !important;
@@ -224,9 +253,12 @@ Settings > General > Body Class.
      text-transform: uppercase !important;
      color: var(--cz-tetra) !important;
    }
-   
+
    /* ── PARAGRAPH ── */
-   p.cz, .cz p {
+   p.cz,
+   p.cz *,
+   .cz p,
+   .cz p * {
      font-family: "Fort-Book", sans-serif !important;
      font-size: 0.875rem !important;
      font-weight: 400 !important;
@@ -235,134 +267,141 @@ Settings > General > Body Class.
      margin-bottom: 1.2em !important;
      color: var(--cz-penta) !important;
    }
-   @media (min-width: 1200px) { p.cz, .cz p { font-size: 1rem !important; } }
-   
+   @media (min-width: 1200px) {
+     p.cz, p.cz *, .cz p, .cz p * { font-size: 1rem !important; }
+   }
+
    /* ── LINKS & EMPHASIS ── */
-   a.cz, .cz a {
+   a.cz,
+   a.cz *,
+   .cz a,
+   .cz a * {
      font-family: "Fort-Medium", sans-serif !important;
      color: var(--cz-tertiary) !important;
      text-decoration: none !important;
    }
    a.cz:hover, .cz a:hover { color: var(--cz-secondary) !important; }
-   
-   .cz strong, strong.cz {
+
+   strong.cz,
+   strong.cz *,
+   .cz strong,
+   .cz strong * {
      color: var(--cz-secondary) !important;
      font-family: "Fort-Bold", sans-serif !important;
    }
 
-   p .single-line,
-      .single-line p {
-        font-size: 0.875rem !important;
-        font-weight: 400 !important;
-        line-height: 180% !important;     
-        letter-spacing: 0.02em !important;
-        /*margin-bottom: 1.2em !important;*/
-        color: var(--color-text, #ffffff) !important;
-        word-break: break-word !important;
-        overflow-wrap: break-word !important;
-      }
 
-      @media (min-width: 1200px) {
-        p.cz.single-line, .cz .single-line p {
-          font-size: 1rem !important;
-        }
-      }
-
- 
 /* ============================================
    SECTION 13 — LANDING PAGE SPECIFIC CLASSES
+   Each modifier rule also uses the 4-selector
+   pattern: element-with-class, its children (*),
+   class-on-ancestor + element, and its children.
    ============================================ */
 
-   /* ── .landing-page — Hero H1 override ──── */
-.hero h1.landing-page,
-.hero .landing-page h1,
-h1.landing-page {
-  font-family: 'Fort-Bold', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 8rem !important;
-  line-height: 88% !important;
-  letter-spacing: 0 !important;
-  text-transform: none !important;
-  color: var(--cz-tertiary, #ffffff) !important;
-}
+   /* ── .landing-page — H1 Hero Modifier ──── */
+   h1.hero.landing-page.cz,
+   h1.hero.landing-page.cz *,
+   .hero.landing-page.cz h1,
+   .hero.landing-page.cz h1 * {
+     font-family: "avantgarde_Bold", sans-serif !important;
+     font-weight: 700 !important;
+     font-style: italic !important;
+     font-size: 8rem !important;
+     line-height: 84% !important;
+     letter-spacing: 0 !important;
+     text-transform: none !important;
+     color: purple !important; /* TEST — revert to var(--cz-tertiary, #ffffff) */
+   }
+   @media (min-width: 768px) {
+     h1.hero.landing-page.cz,
+     h1.hero.landing-page.cz *,
+     .hero.landing-page.cz h1,
+     .hero.landing-page.cz h1 * { font-size: 10rem !important; }
+   }
+   @media (min-width: 1200px) {
+     h1.hero.landing-page.cz,
+     h1.hero.landing-page.cz *,
+     .hero.landing-page.cz h1,
+     .hero.landing-page.cz h1 * { font-size: 12rem !important; }
+   }
 
-@media (min-width: 768px) {
-  .hero h1.landing-page,
-  .hero .landing-page h1,
-  h1.landing-page { font-size: 10rem !important; }
-}
+   /* ── .sub-title — H2 Eyebrow Modifier (Primary) ──── */
+   h2.sub-title.cz,
+   h2.sub-title.cz *,
+   .cz h2.sub-title,
+   .cz h2.sub-title *,
+   .sub-title.cz h2,
+   .sub-title.cz h2 * {
+     font-family: "Fort-Book", sans-serif !important;
+     font-size: 14px !important;
+     font-weight: 400 !important;
+     letter-spacing: 0.12em !important;
+     text-transform: uppercase !important;
+     color: #EB5939 !important;
+     margin-bottom: 1px !important;
+     line-height: 1.4 !important;
+   }
 
-@media (min-width: 1200px) {
-  .hero h1.landing-page,
-  .hero .landing-page h1,
-  h1.landing-page { font-size: 12rem !important; }
-}
+   /* ── .sub-title2 — H2 Eyebrow Modifier (Bold/High Contrast) ──── */
+   h2.sub-title2.cz,
+   h2.sub-title2.cz *,
+   .cz h2.sub-title2,
+   .cz h2.sub-title2 *,
+   .sub-title2.cz h2,
+   .sub-title2.cz h2 * {
+     font-family: "Fort-Bold", sans-serif !important;
+     font-size: 14px !important;
+     font-weight: 700 !important;
+     letter-spacing: 0.45em !important;
+     text-transform: uppercase !important;
+     color: var(--cz-secondary, #EB5939) !important;
+     margin-bottom: 1px !important;
+     line-height: 1.4 !important;
+   }
 
-/* ── .single-line — Prevent layout breaks ──── */
-p.single-line,
-.single-line p {
-  font-size: 0.875rem !important;
-  font-weight: 400 !important;
-  line-height: 180% !important;     
-  letter-spacing: 0.02em !important;
-  color: var(--cz-tertiary, #ffffff) !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
+   /* ── .single-line — Prevent layout breaks ──── */
+   p.single-line,
+   p.single-line *,
+   .single-line p,
+   .single-line p * {
+     font-size: 0.875rem !important;
+     font-weight: 400 !important;
+     line-height: 180% !important;
+     letter-spacing: 0.02em !important;
+     color: var(--cz-tertiary, #ffffff) !important;
+     word-break: break-word !important;
+     overflow-wrap: break-word !important;
+   }
+   @media (min-width: 1200px) {
+     p.single-line, p.single-line *, .single-line p, .single-line p * {
+       font-size: 1rem !important;
+     }
+   }
 
-@media (min-width: 1200px) {
-  p.single-line, .single-line p {
-    font-size: 1rem !important;
-  }
-}
-
-/* ── .testimonial — Landing page review block ──── */
-p.testimonial,
-.testimonial p {
-  font-family: "Fort-Book", sans-serif !important;
-  font-weight: 400 !important;
-  font-size: 1.3rem !important;
-  line-height: 160% !important;
-  letter-spacing: 0.02em !important;
-  margin-bottom: 1.5rem !important;
-  color: var(--cz-tetra, #898989) !important;
-  word-break: break-word !important;
-  overflow-wrap: break-word !important;
-}
-
-@media (min-width: 1200px) {
-  p.testimonial, .testimonial p {
-    font-size: 1.5rem !important;
-  }
-}
+   /* ── .testimonial — Landing page review block ──── */
+   p.testimonial,
+   p.testimonial *,
+   .testimonial p,
+   .testimonial p * {
+     font-family: "Fort-Book", sans-serif !important;
+     font-weight: 400 !important;
+     font-size: 1.3rem !important;
+     line-height: 160% !important;
+     letter-spacing: 0.02em !important;
+     margin-bottom: 1.5rem !important;
+     color: var(--cz-tetra, #898989) !important;
+     word-break: break-word !important;
+     overflow-wrap: break-word !important;
+   }
+   @media (min-width: 1200px) {
+     p.testimonial, p.testimonial *, .testimonial p, .testimonial p * {
+       font-size: 1.5rem !important;
+     }
+   }
 
 
 
-/* ── .sub-title — Section Eyebrow (Primary) ──── */
-.sub-title .cz, .sub-title,
-.sub-title *,
-.sub-title p,
-.sub-title span {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.12em !important;
-  text-transform: uppercase !important;
-  color: var(--cz-secondary, #EB5939) !important;
-  margin-bottom: 1px !important;
-}
 
-/* ── .sub-title2 — Section Eyebrow (Bold/High Contrast) ──── */
-.sub-title2 .cz, .sub-title2,
-.sub-title2 *,
-.sub-title2 p,
-.sub-title2 span {
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.45em !important;
-  text-transform: uppercase !important;
-  color: var(--cz-secondary, #EB5939) !important;
-  margin-bottom: 1px !important;
-}
 
 
 /* ============================================
