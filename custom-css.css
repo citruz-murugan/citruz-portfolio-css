@@ -24,6 +24,14 @@ ALL GLOBAL CSS OUTSIDE .CZ THEME THAT WILL WORK ACROSS CITRUZ DESIGN PORTFOLIO
      background: #222022;
      color: #ffffff;
    }
+
+   /* ── SCROLLBAR ── */
+   ::-webkit-scrollbar { width: 6px; }
+   ::-webkit-scrollbar,
+   ::-webkit-scrollbar-track,
+   ::-webkit-scrollbar-track-piece { background: #171719; }
+   ::-webkit-scrollbar-button,
+   ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 3px; }
    
    /******************************************************************************
    ALL GLOBAL CSS INSIDE .CZ THEME THAT WILL WORK ACROSS CITRUZ DESIGN PORTFOLIO 
@@ -305,8 +313,8 @@ Settings > General > Body Class.
    .hero.landing-page.cz h1 * {
      font-family: "avantgarde_Bold", sans-serif !important;
      font-weight: 700 !important;
-     font-style: italic !important;
-     font-size: 8rem !important;
+     font-style: normal !important;
+     font-size: 5.12rem !important;
      line-height: 84% !important;
      letter-spacing: 0 !important;
      text-transform: none !important;
@@ -316,13 +324,13 @@ Settings > General > Body Class.
      h1.hero.landing-page.cz,
      h1.hero.landing-page.cz *,
      .hero.landing-page.cz h1,
-     .hero.landing-page.cz h1 * { font-size: 10rem !important; }
+     .hero.landing-page.cz h1 * { font-size: 6.4rem !important; }
    }
    @media (min-width: 1200px) {
      h1.hero.landing-page.cz,
      h1.hero.landing-page.cz *,
      .hero.landing-page.cz h1,
-     .hero.landing-page.cz h1 * { font-size: 12rem !important; }
+     .hero.landing-page.cz h1 * { font-size: 7.68rem !important; }
    }
 
    /* ── .sub-title — H2 Eyebrow Modifier (Primary) ──── */
@@ -332,14 +340,14 @@ Settings > General > Body Class.
    .cz h2.sub-title *,
    .sub-title.cz h2,
    .sub-title.cz h2 * {
-     font-family: "Fort-Book", sans-serif !important;
-     font-size: 14px !important;
-     font-weight: 400 !important;
-     letter-spacing: 0.12em !important;
+     font-family: "Fort-Thin", sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 100 !important;
+     letter-spacing: 0.22em !important;
      text-transform: uppercase !important;
      color: #EB5939 !important;
      margin-bottom: 1px !important;
-     line-height: 1.4 !important;
+     line-height: 2 !important;
    }
 
    /* ── .sub-title2 — H2 Eyebrow Modifier (Bold/High Contrast) ──── */
@@ -349,14 +357,14 @@ Settings > General > Body Class.
    .cz h2.sub-title2 *,
    .sub-title2.cz h2,
    .sub-title2.cz h2 * {
-     font-family: "Fort-Bold", sans-serif !important;
-     font-size: 14px !important;
-     font-weight: 700 !important;
-     letter-spacing: 0.45em !important;
+     font-family: "Fort-Thin", sans-serif !important;
+     font-size: 11px !important;
+     font-weight: 100 !important;
+     letter-spacing: 0.22em !important;
      text-transform: uppercase !important;
      color: var(--cz-secondary, #EB5939) !important;
      margin-bottom: 1px !important;
-     line-height: 1.4 !important;
+     line-height: 2 !important;
    }
 
    /* ── .single-line — Prevent layout breaks ──── */
@@ -540,3 +548,11 @@ Settings > General > Body Class.
      top: 0 !important;
      pointer-events: none !important;
    }
+
+   /* ── DIVIDER── */
+   .divider {
+     height: 1px;
+     background-color: rgba(0,0,0,0.2);
+   }
+
+  
