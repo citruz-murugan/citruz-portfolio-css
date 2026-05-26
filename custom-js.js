@@ -57,6 +57,13 @@
      During a text swap, "cz-fading" is added (fade out), then removed
      (fade in) after 150ms — matching the CSS transition duration exactly.
 
+   INNER HTML STRATEGY:
+     Semplice wraps button label text in inner <span> elements with inline
+     colour styles. Setting textContent destroys those spans; when the button
+     reverts, the spans are gone and hover styles break (text goes invisible).
+     Fix: store originalHTML at load time; revert always restores innerHTML
+     so the original Semplice structure is fully reconstructed.
+
    CLIPBOARD STRATEGY:
      1. Tries the modern navigator.clipboard.writeText() API (all current
         browsers — Chrome, Firefox, Safari, Edge).
@@ -82,24 +89,46 @@ function initCopyEmailButton() {
   /* Add the CSS transition class once, at page load */
   copyBtn.classList.add('cz-copy-btn');
 
+  /*
+   * Store the original inner HTML once at page load, before any click.
+   *
+   * WHY innerHTML and not textContent:
+   * Semplice wraps button text in inner <span> elements that carry their
+   * own inline colour styles (e.g. <span style="color:#fff">COPY EMAIL</span>).
+   * Using textContent = '...' to swap labels destroys those child nodes.
+   * After the swap the span is gone, so Semplice's hover rules lose their
+   * target and the text colour falls through to invisible.
+   * Restoring innerHTML brings the original span (and its inline styles)
+   * back exactly, so hover works correctly every time.
+   */
+  var originalHTML = copyBtn.innerHTML;
+  var originalText = copyBtn.textContent.trim();
+
   /* --- Click handler --- */
   copyBtn.addEventListener('click', function (e) {
     e.preventDefault(); /* prevent any default link navigation */
 
-    var email        = 'citruz.murugan@gmail.com';
-    var originalText = copyBtn.textContent; /* store original so we can revert */
+    var email = 'citruz.murugan@gmail.com';
 
     /*
      * swapText(newText)
      * -----------------
      * Fades the button out, changes its label, then fades it back in.
      * The 150ms delay matches the CSS transition duration in custom-css.css.
+     *
+     * For "COPIED!" we set textContent (fast, simple — only shown briefly).
+     * For the revert we restore the original innerHTML so Semplice's inner
+     * <span> elements and their inline styles come back intact.
      */
     function swapText(newText) {
-      copyBtn.classList.add('cz-fading');       /* trigger fade-out via CSS */
+      copyBtn.classList.add('cz-fading');          /* trigger fade-out via CSS */
       setTimeout(function () {
-        copyBtn.textContent = newText;          /* swap text while invisible */
-        copyBtn.classList.remove('cz-fading');  /* trigger fade-in via CSS */
+        if (newText === originalText) {
+          copyBtn.innerHTML = originalHTML;        /* full restore — brings back Semplice's spans */
+        } else {
+          copyBtn.textContent = newText;           /* simple swap for the brief "COPIED!" state */
+        }
+        copyBtn.classList.remove('cz-fading');     /* trigger fade-in via CSS */
       }, 150);
     }
 
@@ -112,7 +141,7 @@ function initCopyEmailButton() {
     function showFeedback() {
       swapText('COPIED!');
       setTimeout(function () {
-        swapText(originalText);
+        swapText(originalText);  /* triggers innerHTML restore */
       }, 2000);
     }
 
