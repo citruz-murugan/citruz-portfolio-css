@@ -562,15 +562,21 @@ Settings > General > Body Class.
      vertical-align: middle !important;
    }
    a.btn.cz:hover,
-   .btn.cz a:hover {
-     color: var(--cz-penta) !important;
+   a.btn.cz:hover:visited,
+   .btn.cz a:hover,
+   .btn.cz a:hover:visited {
+     color: var(--cz-tertiary) !important;   /* force white — overrides global a.cz:hover orange rule */
      background: transparent !important;
      border-color: var(--cz-secondary) !important;
      box-shadow: 0 0 0 3px rgba(235, 89, 57, 0.15), 0 6px 20px rgba(235, 89, 57, 0.12) !important;
+     text-decoration: none !important;
    }
    a.btn.cz:hover *,
-   .btn.cz a:hover * {
-     color: var(--cz-penta) !important;
+   a.btn.cz:hover:visited *,
+   .btn.cz a:hover *,
+   .btn.cz a:hover:visited * {
+     color: var(--cz-tertiary) !important;   /* force white on inner spans too */
+     text-decoration: none !important;
    }
 
 /* ============================================
