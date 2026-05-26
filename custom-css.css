@@ -565,7 +565,7 @@ Settings > General > Body Class.
    a.btn.cz:hover:visited,
    .btn.cz a:hover,
    .btn.cz a:hover:visited {
-     color: var(--cz-tertiary) !important;   /* force white — overrides global a.cz:hover orange rule */
+     color: var(--cz-tertiary) !important;
      background: transparent !important;
      border-color: var(--cz-secondary) !important;
      box-shadow: 0 0 0 3px rgba(235, 89, 57, 0.15), 0 6px 20px rgba(235, 89, 57, 0.12) !important;
@@ -575,7 +575,29 @@ Settings > General > Body Class.
    a.btn.cz:hover:visited *,
    .btn.cz a:hover *,
    .btn.cz a:hover:visited * {
-     color: var(--cz-tertiary) !important;   /* force white on inner spans too */
+     color: var(--cz-tertiary) !important;
+     text-decoration: none !important;
+   }
+
+   /*
+    * Semplice specificity override for .cz-copy-btn hover text colour.
+    *
+    * Problem: Semplice's frontend.min.css contains a high-specificity rule
+    * (anchored on the #content / #content-holder IDs) that sets
+    * color: rgba(0,0,0,0) — fully transparent — on hovered <a> elements
+    * inside .ce-button .is-content. This beats our generic .btn.cz rules above
+    * because an ID selector outweighs any number of class selectors.
+    *
+    * Fix: mirror Semplice's own selector structure (#content + .ce-button +
+    * .is-content + a) and add .cz-copy-btn on top. That gives us one extra
+    * class in the specificity count — enough to win — while our custom CSS
+    * also loads after frontend.min.css, so source order backs us up too.
+    */
+   #content .ce-button .is-content a.cz-copy-btn:hover,
+   #content .ce-button .is-content a.cz-copy-btn:hover *,
+   #content-holder .ce-button .is-content a.cz-copy-btn:hover,
+   #content-holder .ce-button .is-content a.cz-copy-btn:hover * {
+     color: #ffffff !important;
      text-decoration: none !important;
    }
 
